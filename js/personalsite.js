@@ -14,3 +14,93 @@ $(".main").onepage_scroll({
                                     // the browser's width is less than 600, the fallback will kick in.
    direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
 });
+
+
+var myEmail = "liampcollins" + "@gmail.com"
+var message
+var senderEmail
+var aK = "4GXRIpD" + "f9HxK3P" + "nVeF2MwA"
+var params
+var response
+
+function log(obj) {
+   $('#response').css("background", 'rgb(68,61,40)');
+   response = JSON.stringify(obj)
+   if(response.status = "sent"){
+      $('#response').text("Message has been sent. Thank you");      
+   }else{
+      $('#response').text("Something went wrong. Try emailing me directly at " + myEmail + "");      
+   }
+}
+
+var m = new mandrill.Mandrill(aK);
+
+
+function sendTheMail() {
+   message = $(".message").val();
+   senderEmail = $(".email-address").val();
+   params = {
+       "message": {
+           "from_email":myEmail,
+           "to":[{"email":myEmail}],
+           "subject": "Email from " + senderEmail + " from personal site",
+           "html": "<p>" + message + "</p>",
+          "text": message,
+           "autotext": true,
+           "track_opens": true,
+           "track_clicks": true,
+       }
+   };
+   if(message!="" && senderEmail!=""){
+      m.messages.send(params, function(res) {
+      log(res);
+      $(".message").value = ""
+      $(".email-address").value = ""
+      }, function(err) {
+         log(err);
+      });      
+   }else{
+      debugger
+      $('#response').css("background", 'rgb(68,61,40)');
+      $('#response').text("You must enter a valid email address and message to continue");      
+   }
+
+}
+
+
+function hello(){
+   console.log("hello")
+}
+
+$(document).ready(function(){
+  $('.send-button').on('click', sendTheMail)
+});
+
+
+// $.ajax({
+//   type: “POST”,
+//   url: “https://mandrillapp.com/api/1.0/messages/send.json”,
+//   data: {
+//     ‘key’: ‘YOUR API KEY HERE’,
+//     ‘message’: {
+//       ‘from_email’: ‘YOUR@EMAIL.HERE’,
+//       ‘to’: [
+//           {
+//             ‘email’: ‘RECIPIENT_NO_1@EMAIL.HERE’,
+//             ‘name’: ‘RECIPIENT NAME (OPTIONAL)’,
+//             ‘type’: ‘to’
+//           },
+//           {
+//             ‘email’: ‘RECIPIENT_NO_2@EMAIL.HERE’,
+//             ‘name’: ‘ANOTHER RECIPIENT NAME (OPTIONAL)’,
+//             ‘type’: ‘to’
+//           }
+//         ],
+//       ‘autotext’: ‘true’,
+//       ‘subject’: ‘YOUR SUBJECT HERE!’,
+//       ‘html’: ‘YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!’
+//     }
+//   }
+//  }).done(function(response) {
+//    console.log(response); // if you're into that sorta thing
+//  });
