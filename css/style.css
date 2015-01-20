@@ -23,6 +23,15 @@ body{
 
 }
 
+/*
+background: url(http://static.wixstatic.com/media/41d000_70e2af1934134a68174f0f93c033cbfc.png_srz_p_213_213_75_22_0.50_1.20_0.00_png_srz);
+background-image: url(http://static.wixstatic.com/media/41d000_70e2af1934134a68174f0f93c033cbfc.png_srz_p_213_213_75_22_0.50_1.20_0.00_png_srz);
+background-attachment: fixed;
+background-size: auto;
+
+rgba(36, 36, 36, 1)
+*/
+
 
 .name {
 	height: 40vh;
@@ -37,6 +46,8 @@ body{
 .bio-info{
 	height: 60vh;
 	width: 100vw;
+	background: rgb(236,230,214);
+
 }
 
 
@@ -47,14 +58,12 @@ body{
 	text-align: center;
 	width: 70%;
 	height: 100%;
-	background: rgb(236,230,214);
 	float: left;
 }
 
 .icons{
 	width: 30%;
 	height: 100%;
-	background: rgb(236,230,214);
 	float: right;
 	padding: 5% 10%;
 }
