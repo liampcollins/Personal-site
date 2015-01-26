@@ -23,6 +23,15 @@ body{
 
 }
 
+
+@font-face {
+ font-family: 'Mohave';
+ src: url('../Mohave.otf');
+ font-weight: normal;
+ font-style: normal;
+}
+
+
 /*
 background: url(http://static.wixstatic.com/media/41d000_70e2af1934134a68174f0f93c033cbfc.png_srz_p_213_213_75_22_0.50_1.20_0.00_png_srz);
 background-image: url(http://static.wixstatic.com/media/41d000_70e2af1934134a68174f0f93c033cbfc.png_srz_p_213_213_75_22_0.50_1.20_0.00_png_srz);
@@ -34,10 +43,11 @@ rgba(36, 36, 36, 1)
 
 
 .name {
+	font-family: 'Mohave', sans-serif;
 	height: 40vh;
 	background: rgb(68,61,40);
 	color: #fff;
-	font-size: 70px;
+	font-size: 90px;
 	text-align: center;
 	padding-top: 80px;
 	font-weight: bold;
@@ -97,6 +107,7 @@ rgba(36, 36, 36, 1)
 }
 
 .skills-headings{
+	font-family: 'Mohave', sans-serif;
 	height: 20%;
 }
 
@@ -143,6 +154,7 @@ rgba(36, 36, 36, 1)
 }
 
 .projects-header{
+	font-family: 'Mohave', sans-serif;
 	height: 20vh;
 	text-align: center;
 	background: rgb(68,61,40);
@@ -226,6 +238,7 @@ a{
 
 
 .contact-header{
+	font-family: 'Mohave', sans-serif;
 	height: 20vh;
 	width: 100cw;
 	background:rgb(68,61,40);
@@ -370,11 +383,11 @@ textarea{
 	}
 	
 	.email-address{
-		margin-top: 50px;
-		margin-bottom: 50px;
+		margin-top: 20px;
+		margin-bottom: 20px;
 	}
 	.message{
-		margin-bottom: 50px;
+		margin-bottom: 20px;
 	}
 
 }
@@ -382,14 +395,14 @@ textarea{
 
 @media only screen and (max-width: 360px) {  
 	.name {
-		height: 25vh;
-		font-size: 14vw;
-		padding-top: 20px;
+		height: 30vh;
+		font-size: 18vw;
+		padding: 27px;
 	}
 
 	.bio-info{
-		padding-top: 5vh;
-		height: 75vh;
+		padding-top: 2vh;
+		height: 70vh;
 	}
 
 
@@ -397,7 +410,7 @@ textarea{
 		font-size: 15px;
 		width: 100%;
 		height: 70%;
-		padding: 5% 10%;
+		padding: 2% 10%;
 	}
 
 	.icons{
@@ -407,7 +420,10 @@ textarea{
 	}
 
 	.icons-container{
-		padding: 10px;
+		padding: 0px;
+		height: 80%;
+		width: 70%;
+		margin: 0 auto;
 	}
 
 	.icons-container a img{
@@ -415,8 +431,8 @@ textarea{
 	}
 
 	#github-logo{
-		width: 35px;
-		margin-bottom: 8px;
+		width: 33px;
+		margin-bottom: 11px;
 
 	}
 
@@ -478,6 +494,7 @@ textarea{
 	.project-title{
 		height: 19%;
 		font-size: 15px;
+		margin-bottom: 10px;
 	}
 
 	.project-title span{
@@ -487,36 +504,39 @@ textarea{
 	article img{
 		height: 30px;
 		margin: 5px;
-	}
-
-	article img:hover{
+		margin-top: -40px;
 		opacity: 1;
 	}
 
 	.project-link-container{
-		padding-top: 10%;
-		height: 55%;
+		padding-top: 5%;
+		height: 70%;
 		width: 70vw;
 		margin: 0 auto;
+		opacity: 1;
+
 	}
 
 	.project-link{
 		font-size: 15px;
 		height: 20px;
 		padding-top: 2px;
+		opacity: 1;
+		background:rgba(68,61,40,1);
+
 	}
 
 
 	.contact-header{
-		font-size: 30px;
+		font-size: 40px;
 	}
 
 
 	textarea{
-		height: 250px;
+		height: 220px;
 		width: 220px;
 		font-size: 20px;
-		margin-bottom: 20px;
+		margin-bottom: 5px;
 		color: rgb(68,61,40);
 	}
 
